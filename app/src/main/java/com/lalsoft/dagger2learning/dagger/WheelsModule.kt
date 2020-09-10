@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
- class WheelsModule {
+ object WheelsModule {
     @Provides
     fun provideRims(): Rims {
         return Rims()
