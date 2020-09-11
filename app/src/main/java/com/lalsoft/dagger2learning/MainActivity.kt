@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.lalsoft.dagger2learning.car.Car
 import com.lalsoft.dagger2learning.dagger.ActivityComponent
 import com.lalsoft.dagger2learning.dagger.AppComponent
-import com.lalsoft.dagger2learning.dagger.DaggerActivityComponent
+
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -30,11 +30,8 @@ class MainActivity : AppCompatActivity() {
 //                .engineCapacity(1400)
 //                .build()
         val appComponent: AppComponent = ExampleApp.component
-        val component:ActivityComponent=DaggerActivityComponent.builder()
-            .horsePower(150)
-            .engineCapacity(1400)
-            .appComponent(appComponent)
-            .build()
+        val component:ActivityComponent=
+            appComponent.getActivityComponentFactory().create(150,1400)
 
         component.inject(this)
         car1.drive()

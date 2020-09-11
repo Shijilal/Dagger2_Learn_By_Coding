@@ -1,7 +1,6 @@
-package com.lalsoft.dagger2learning.dagger
+package com.lalsoft.dagger2learning.car
 
 import android.util.Log
-import com.lalsoft.dagger2learning.car.Engine
 import javax.inject.Inject
 
 

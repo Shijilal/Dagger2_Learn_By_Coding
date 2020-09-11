@@ -1,9 +1,9 @@
 package com.lalsoft.dagger2learning
 
 import android.app.Application
-import com.lalsoft.dagger2learning.dagger.ActivityComponent
 import com.lalsoft.dagger2learning.dagger.AppComponent
 import com.lalsoft.dagger2learning.dagger.DaggerAppComponent
+import com.lalsoft.dagger2learning.dagger.DriverModule
 
 
 class ExampleApp : Application() {
@@ -16,8 +16,9 @@ class ExampleApp : Application() {
     override fun onCreate() {
         exampleApp=this
         super.onCreate()
-        component = DaggerAppComponent.create()
+        component = DaggerAppComponent.factory().create(DriverModule("Shijilal"))
 
     }
 
 }
+

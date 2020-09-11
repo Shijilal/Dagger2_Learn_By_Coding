@@ -27,6 +27,6 @@ class Car() {
 
     fun drive() {
         engine.start()
-        Log.d(TAG, "$driver driving $this")
+        Log.d(TAG, "$driver ${driver.name} driving $this")
     }
 }
